@@ -1,7 +1,7 @@
-class PigLatinateable
+class PigLatinizeable
 
 	def initialize
-		puts 	"What is the phrase you\'re looking to PigLatinate?".center(70)
+		puts 	"What is the phrase you\'re looking to piglatinize?".center(70)
 		@english_phrase = gets.chomp
 
 		if @english_phrase == ''
@@ -11,35 +11,35 @@ class PigLatinateable
 	end
 
 
-	def piglatinate
-		pre_piglatinated_phrase = @english_phrase.to_s.split(" ")
-		@piglatinated_array = []
-		@piglatinated_phrase = ''
+	def piglatinize
+		pre_piglatinized_phrase = @english_phrase.to_s.split(" ")
+		@piglatinized_array = []
+		@piglatinized_phrase = ''
 
-		pre_piglatinated_phrase.each do |x|
+		pre_piglatinized_phrase.each do |x|
 			x = x + x[0] + 'ay'
 			x[0] = ''
-			@piglatinated_array << x 
+			@piglatinized_array << x 
 		end
 
-		@piglatinated_array.each do |s|
-			@piglatinated_phrase = @piglatinated_phrase + "#{s.to_s} "
+		@piglatinized_array.each do |s|
+			@piglatinized_phrase = @piglatinized_phrase + "#{s.to_s} "
 		end
 
-		@piglatinated_phrase = @piglatinated_phrase[0..-2]
+		@piglatinized_phrase = @piglatinized_phrase[0..-2]
 
 	end
 
-	def take_it_back_to_english
-		pre_re_englished_phrase = @piglatinated_phrase.split(" ")
-		@re_englished_phrase = ''
+	def re_englishize
+		pre_re_englishized_phrase = @piglatinized_phrase.split(" ")
+		@re_englishized_phrase = ''
 
-		pre_re_englished_phrase.each do |x|
+		pre_re_englishized_phrase.each do |x|
 			x = x[-3] + x[0..-4]
-			@re_englished_phrase = @re_englished_phrase + x + ' '
+			@re_englishized_phrase = @re_englishized_phrase + x + ' '
 		end
 
-		@re_englished_phrase = @re_englished_phrase[0..-2]
+		@re_englishized_phrase = @re_englishized_phrase[0..-2]
 
 	end
 
@@ -47,7 +47,7 @@ class PigLatinateable
 	def dramatically_announce_piglatinization
 
 		3.times do 
-			puts 	"***piglatinating in progress***".center(70) 
+			puts 	"***piglatinizing in progress***".center(70) 
 			puts 	
 		end
 
@@ -55,22 +55,22 @@ class PigLatinateable
 		puts
 		puts
 		puts
-		puts	">>> \'#{@piglatinated_phrase.upcase}\' <<<".center(70)
+		puts	">>> \'#{@piglatinized_phrase.upcase}\' <<<".center(70)
 		puts
-		puts	"is the PigLatinated version of \'#{@english_phrase}\'".center(70)
+		puts	"is the PigLatinized version of \'#{@english_phrase}\'".center(70)
 		puts	"...oolcay, ightray?".center(70)
 		puts
 		puts
 		puts
 		puts 	" ----------------------------------------".center(70)
 		puts
-		
+
 	end
 
 
 	def dramatically_announce_re_englishization
 		3.times do 
-			puts 	"***re-renglishinating in progress***".center(70)
+			puts 	"***re-englishizing in progress***".center(70)
 			puts
 		end
 
@@ -78,10 +78,10 @@ class PigLatinateable
 		puts
 		puts 
 		puts
-		puts 	">>> \'#{@re_englished_phrase.upcase}\' <<<".center(70)
+		puts 	">>> \'#{@re_englishized_phrase.upcase}\' <<<".center(70)
 		puts
-		puts	"is the re-Englished version of \'#{@piglatinated_phrase}\',".center(70)
-		puts	"which is the PigLatinated version of \'#{@english_phrase}\'".center(70)
+		puts	"is the re-Englishized version of \'#{@piglatinized_phrase}\',".center(70)
+		puts	"which is the PigLatinized version of \'#{@english_phrase}\'".center(70)
 		puts 	"...got it?".center(70)
 		puts
 		puts
@@ -93,8 +93,8 @@ class PigLatinateable
 
 
 	def test
-		if @re_englished_phrase.upcase == @english_phrase.upcase
-			puts "Wooo! The phrase was PigLatinated and Re-Englishinated as expected!"
+		if @re_englishized_phrase.upcase == @english_phrase.upcase
+			puts "Wooo! The phrase was piglatinized and Re-Englishized as expected!"
 		else
 			puts "Uh oh....something isn\'t right..."
 		end
@@ -102,12 +102,11 @@ class PigLatinateable
 
 end
 
-phrase = PigLatinateable.new 
-phrase.piglatinate
+phrase = PigLatinizeable.new 
+phrase.piglatinize
+phrase.re_englishize
+# phrase.test
 phrase.dramatically_announce_piglatinization
-phrase.take_it_back_to_english
 phrase.dramatically_announce_re_englishization
-phrase.test
-
 
 
