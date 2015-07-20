@@ -103,10 +103,11 @@ class PigLatinizeable
 end
 
 phrase = PigLatinizeable.new 
+# If I wanted to be straightforward, I could just do a:
+# puts "#{phrase.piglatinize}" 
+# puts "#{phrase.re_englishize}"
+# but I am feeling *dramatic* today, so I'll do:
 phrase.piglatinize
 phrase.re_englishize
-# phrase.test
 phrase.dramatically_announce_piglatinization
 phrase.dramatically_announce_re_englishization
-
-
